@@ -8,7 +8,7 @@ import java.util.Locale;
 public class Three {
     public String Three(String new_id) {
         List<String> possible = new ArrayList<>(Arrays.asList("-", "_", "."));
-
+        String answer = "";
         int i;
 
         new_id = new_id.toLowerCase();
@@ -31,8 +31,8 @@ public class Three {
             new_id = new_id.substring(0,new_id.length()-2);
         }
 
-
         return answer;
+
     }
 
 }
