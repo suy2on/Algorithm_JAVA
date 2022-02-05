@@ -41,7 +41,7 @@ public class Two {
 
 
     // 객체지향적 풀이
-    
+
     class Truck {
         int weight;
         int move;
