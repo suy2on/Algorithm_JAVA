@@ -34,6 +34,43 @@ public class One {
     }
 
 
+    public int solution2 (int[] priorities, int location){
+
+        Queue<int[]> queue = new LinkedList<>();
+        int idx = 0;
+        int count = 0;
+
+
+        for(int priority : priorities){
+            queue.offer(new int[]{priority, idx});
+            idx++;
+        }
+
+        while(!queue.isEmpty()){
+            Boolean print = Boolean.TRUE;
+            for(int [] element : queue){
+                if(queue.peek()[0] < element[0]){
+                    print = Boolean.FALSE;
+                    break;
+                }
+            }
+
+            if(print){
+                int [] out = queue.poll();
+                count++;
+                if(out[1] == location){
+                    return count;
+                }
+            }
+            else{
+                queue.offer(queue.poll());
+            }
+
+        }
+
+        return 0;
+    }
+
 
 
 }
