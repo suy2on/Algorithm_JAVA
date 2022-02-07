@@ -27,7 +27,7 @@ public class Five {
                 primeSet.add(Integer.parseInt(part + n));
                // System.out.println("prime");
             }
-            List<String> copy_list = new ArrayList<>(num_list.subList(0, num_list.size()));
+            List<String> copy_list = new ArrayList<>(num_list);
             copy_list.remove(n);
             dfs(copy_list, part + n);
         }
