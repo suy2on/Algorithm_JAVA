@@ -3,21 +3,25 @@ package LV2;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Four implements Comparator<String> {
+public class Four {
 
     public String solution(int[] numbers) {
         String answer = "";
         String [] snumbers = new String[numbers.length];
 
         for(int i=0; i<numbers.length; i++){
-            snumbers[i] = Integer.toString(numbers[i]);
+            snumbers[i] = String.valueOf(numbers[i]);
         }
 
-        Arrays.sort(snumbers);
 
-        for(String str : snumbers){
-            System.out.println(str);
-        }
+        Arrays.sort(snumbers, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return (o2+o1).compareTo(o1+o2); // 내림차순
+            }
+        });
+
+        if(snumbers[0].equals("0")) return "0"; // 예외처리
 
         for(String str : snumbers){
             answer += str;
@@ -25,15 +29,5 @@ public class Four implements Comparator<String> {
         return answer;
     }
 
-    @Override
-    public int compare(String s1, String s2){
-        if((s1+s2).compareTo(s2+s1) >= 0 ) {
-            return 1;
-        }
-        else{
-            return -1;
-        }
-
-    }
 
 }
