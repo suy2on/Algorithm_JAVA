@@ -8,7 +8,7 @@ public class Twoleve {
         int answer = n;
         Map<Integer,Integer> student = new HashMap<>();
 
-        for(int i=01; i<n+1; i++){
+        for(int i=1; i<n+1; i++){
             student.put(i,1);
         }
 
@@ -20,18 +20,22 @@ public class Twoleve {
             student.put(num, student.get(num)+1);
         }
 
-        for(int i=n; i>1; i--){
-            if(student.get(i) == 0 && student.get(i-1) == 2){
-                student.put(i, 1);
-                student.put(i-1, 1);
+
+        for(int i=n; i>0; i--){
+            if(student.get(i) == 0){
+                if(student.getOrDefault(i-1,3) == 2){
+                    student.put(i, 1);
+                    student.put(i-1, 1);
+                }
+                else if(student.getOrDefault(i+1,3) == 2) {
+                    student.put(i, 1);
+                    student.put(i + 1, 1);
+                }
+
             }
+
             if(student.get(i) == 0) answer --;
         }
-
-        if(student.get(1) == 0 && student.get(1) == 2){
-            student.put(1,1);
-        }
-        if(student.get(1) == 0) answer--;
 
         return answer;
     }
