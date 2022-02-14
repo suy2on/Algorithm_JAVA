@@ -29,8 +29,8 @@ public class Ten {
         for(int i =65; i<91; i++){
             int pos = i - 65;
             int neg = -(26 - pos);
-            Integer[] pair = new Integer[] {pos,neg};
-            idx.put((char)i, pair);
+           // Integer[] pair = new Integer[] {pos,neg};
+            idx.put((char)i, new Integer[]{pos,neg});
         }
 
         while(match != 0){
@@ -40,7 +40,7 @@ public class Ten {
             if(tmp-i < name.length()-tmp+i){
 
             }
-            for()
+
         }
 
 

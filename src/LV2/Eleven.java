@@ -27,7 +27,7 @@ public class Eleven {
         for(Character c : nums){
             answer += Character.toString(c);
         }
-        
+
 
         if(remove < k) return answer.substring(0,answer.length()-1);
 

@@ -1,9 +1,19 @@
 package LV2;
 
+import java.util.Stack;
+
 public class Main {
 
     public static void main(String[] args) {
-        Five five = new Five();
-        System.out.println(five.solution("011"));
+        Stack<Integer> test = new Stack<>();
+
+        test.add(1);
+        test.add(2);
+        test.add(3);
+
+        System.out.println(test.pop());
+        for(int i : test){
+            System.out.println(i);
+        }
     }
 }
