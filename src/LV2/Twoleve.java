@@ -1,6 +1,6 @@
 package LV2;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Twoleve {
     public int solution(int[] people, int limit) {
@@ -51,5 +51,17 @@ public class Twoleve {
         if(tail == head) count++;
 
         return count;
+    }
+
+    public int solution3(int[] numbers, int num){
+        int answer=0;
+        List<int[]> pairs = new ArrayList<>();
+        Queue<int[]> waitQ = new LinkedList<>();
+
+        pairs.add(new int[]{3,4,5});
+        waitQ.offer(new int[]{5,6,7});
+
+
+        return answer;
     }
 }
